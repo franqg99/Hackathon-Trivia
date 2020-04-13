@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://opentdb.com/api.php?",
+    baseURL: "https://opentdb.com/",
     headers: {
      Accept: "application/json",
      "Content-Type": "application/json"
@@ -11,13 +11,19 @@ const API = axios.create({
  export default {
     //Auth
     async getToken() {
-      const response = await API.get("/command=request");
+      const response = await API.get("api_token.php?command=request");
       return response.data;
     },
-    async getQuestion() {
-        const response = await API.get(`amount=10&token=${YOURTOKENHERE}&category=12&difficulty=medium&type=boolean`);
+    async getQuestion(idtoken, idcategory = 0, iddifficulty = 0) {
+        const response = await API.get(`api.php?amount=10&token=${idtoken}&category=${idcategory}&difficulty=${iddifficulty}&type=boolean`);
+        return response.data;
+      },
+      async resetToken(idtoken) {
+        const response = await API.get(`api_token.php?command=reset&token=${idtoken}`);
+        return response.data;
+      },
+      async getAllCategory() {
+        const response = await API.get(`api_category.php`);
         return response.data;
       },
 }
-
-https://opentdb.com/api.php?amount=10&category=12&difficulty=medium&type=boolean
