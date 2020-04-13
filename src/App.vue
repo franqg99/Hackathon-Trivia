@@ -2,14 +2,14 @@
   <div>
     <Navbar />
     <QuestionsViews />
-    <Filter />
+    <Prueba />
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
 import QuestionsViews from "@/views/QuestionsViews.vue";
-import Filter from "@/components/Filter.vue";
+import Prueba from "@/components/Prueba.vue";
 
 export default {
   name: "App",
@@ -17,7 +17,7 @@ export default {
   components: {
     QuestionsViews,
     Navbar,
-    Filter
+    Prueba
   }
 };
 </script>
