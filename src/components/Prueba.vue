@@ -4,7 +4,7 @@
       <v-col :cols="3">
         <v-container fluid>
           Choose Difficulty
-          <v-radio-group v-model="radios" :mandatory="false">
+          <v-radio-group v-model="selectDifficulty" :mandatory="false">
             <v-radio
               v-for="(difficulty, idx) in difficulty"
               :key="idx"
@@ -16,7 +16,7 @@
 
         <v-container fluid>
           Choose Category
-          <v-radio-group v-model="radios" :mandatory="false">
+          <v-radio-group v-model="selectCategory" :mandatory="false">
             <v-radio
               v-for="category in category.trivia_categories"
               :key="category.id"
@@ -25,6 +25,7 @@
             ></v-radio>
           </v-radio-group>
         </v-container>
+        <v-btn x-large color="success" dark @click="getTest()">Get Test</v-btn>
       </v-col>
     </v-row>
   </div>
@@ -37,7 +38,9 @@ export default {
   data() {
     return {
       category: [],
-      difficulty: ["easy", "medium", "hard"]
+      difficulty: ["easy", "medium", "hard"],
+      selectCategory: "",
+      selectDifficulty: ""
     };
   },
   methods: {
