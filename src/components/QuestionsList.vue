@@ -22,9 +22,10 @@ export default {
 
 <style lang="scss" scoped>
 #questions {
+  width: 70%;
+  float: right;
+  margin-top: -1050px;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 10px;
-  margin-top: 10px;
 }
 </style>
