@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="questions">
     <QuestionsCard
       v-for="(question, idx) in questions"
       :key="idx"
@@ -20,4 +20,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#questions {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

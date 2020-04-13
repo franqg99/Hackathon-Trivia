@@ -18,7 +18,7 @@ export default {
     const response = await API.get(
       `api.php?amount=10&token=${idtoken}&category=${idcategory}&difficulty=${iddifficulty}&type=boolean`
     );
-    return response.data;
+    return response.data.results;
   },
   async resetToken(idtoken) {
     const response = await API.get(

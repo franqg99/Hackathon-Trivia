@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import QuestionsList from "@/components/QuestionsList.vue";
+import QuestionsList from "../components/QuestionsList";
 import Api from "@/service/API.js";
 
 export default {

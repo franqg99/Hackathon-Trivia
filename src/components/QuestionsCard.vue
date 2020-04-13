@@ -1,19 +1,15 @@
 <template>
   <v-card class="mx-auto" max-width="344">
     <v-card-text>
-      <div>Question</div>
-      <p class="display-1 text--primary">be•nev•o•lent</p>
-      <p>{{ question.category }}</p>
-      <div class="text--primary">
-        well meaning and kindly.
-        <br />"a benevolent smile"
-      </div>
+      <div>{{ question.category }}</div>
+      <div class="text--primary">{{ question.question }}</div>
     </v-card-text>
     <v-card-actions>
       <v-checkbox
         v-model="checkbox1"
-        :label="`Checkbox 1: ${checkbox1.toString()}`"
+        :label="`${checkbox1.toString().toUpperCase()}`"
       ></v-checkbox>
+      <v-btn @click="checkAnswer(question)">Check</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -27,6 +23,17 @@ export default {
   },
   props: {
     question: Object
+  },
+  methods: {
+    checkAnswer(question) {
+      if (question.correct_answer.toLowerCase() == this.checkbox1.toString()) {
+        alert("It's Ok");
+      } else {
+        alert("fallaste perro");
+      }
+      // if (question.correct_answer == this.checkbox1) {
+      // }
+    }
   }
 };
 </script>
