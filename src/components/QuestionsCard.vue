@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344">
+  <v-card id="card" class="mx-auto" max-width="344">
     <v-card-text>
       <div>{{ question.category }}</div>
       <div class="text--primary">{{ question.question }}</div>
@@ -9,7 +9,7 @@
         v-model="checkbox1"
         :label="`${checkbox1.toString().toUpperCase()}`"
       ></v-checkbox>
-      <v-btn @click="checkAnswer(question)">Check</v-btn>
+      <v-btn id="button" @click="checkAnswer(question)">Check</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -38,4 +38,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#button {
+  width: 10px;
+  margin-left: 100px;
+}
+#card {
+  width: 500px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+</style>

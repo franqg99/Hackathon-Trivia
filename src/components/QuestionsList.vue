@@ -24,5 +24,7 @@ export default {
 #questions {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 </style>
